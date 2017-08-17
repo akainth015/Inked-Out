@@ -18,5 +18,8 @@
     "bugs": {
         "url": "https://github.com/akainth015/PayPer/issues"
     },
-    "homepage": "https://github.com/akainth015/PayPer#readme"
+    "homepage": "https://github.com/akainth015/PayPer#readme",
+    "dependencies": {
+        "express": "4.15.4"
+    }
 }
