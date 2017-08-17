@@ -1,0 +1,22 @@
+{
+    "name": "payper",
+    "version": "0.0.0",
+    "description": "A NodeJS server designed for PayPer",
+    "main": "bin/www.js",
+    "bin": {
+        "payper": "www.js"
+    },
+    "scripts": {
+        "test": "node bin/www.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/akainth015/PayPer.git"
+    },
+    "author": "Aanand Kainth & Joe Zou",
+    "license": "UNLICENSED",
+    "bugs": {
+        "url": "https://github.com/akainth015/PayPer/issues"
+    },
+    "homepage": "https://github.com/akainth015/PayPer#readme"
+}
