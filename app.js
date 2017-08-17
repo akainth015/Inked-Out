@@ -6,5 +6,8 @@ const express = require('express'), app = express();
 app.get('/', function(request, response) {
     response.sendFile('/public/index.html', {root: __dirname});
 });
+app.get('*', function(request, response) {
+    response.sendFile('/public/' + request.params[0], {root: __dirname});
+});
 
 module.exports = app;
