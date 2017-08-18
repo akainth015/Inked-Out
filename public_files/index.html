@@ -4,15 +4,58 @@
         <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
         <link rel="stylesheet" href="stylesheets/index.css">
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>PayPer Print</title>
     </head>
     <body>
         <header>
-            <a href="/"><img id="icon" src="images/icon_256.png"></a><a id="logo_link" href="/">PayPer</a>
+            <a href="/"><img id="icon" src="images/icon_256.png"></a><a id="logo_link" href="/">PayPer Inks</a>
             <nav>
                 <h6 class="nav_option" id="home">Home</h6>
                 <h6 class="nav_option" id="order">Order</h6>
             </nav>
         </header>
+        <div id="content-container"></div>
+        <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <!--Leave the next script alone, okay, JoZo (your nickname btw)?-->
+        <script>
+            const PageManager = function(context) {
+                this.context = context;
+                this.pages = {};
+            };
+            PageManager.prototype.add = function(id, html, script) {
+                if (this.pages[id]) throw new Error("Can't have multiple pages with the same ID");
+                else this.pages[id] = [html, script];
+            };
+            PageManager.prototype.set = function(id) {
+                const fragmentScripts = document.getElementsByClassName('page-manager-fragment-script');
+                for (var i = 0; i < fragmentScripts.length; i++) {
+                    document.removeChild(fragmentScripts[i]);
+                }
+                if (this.pages[id]) {
+                    this.context.innerHTML = this.pages[id][0];
+                    if (this.pages[id][1]) {
+                        const script = document.createElement('script');
+                        script.src = this.pages[id][1];
+                        script.classList.add('page-manager-fragment-script');
+                        document.body.appendChild(script);
+                    }
+                }
+                else {
+                    throw new Error("That ID does not exist");
+                }
+            };
+        </script>
+        <script>
+            const pageManager = new PageManager(document.getElementById('content-container'));
+            /* Load Home with an XMLHttpRequest */
+            const request = new XMLHttpRequest();
+            request.addEventListener('load', function() {
+                pageManager.add('home', request.responseText, 'fragments/home.fragment.js');
+                pageManager.set('home');
+            });
+            request.open('GET', 'fragments/home.fragment');
+            request.send();
+        </script>
     </body>
 </html>

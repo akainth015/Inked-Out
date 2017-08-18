@@ -1,0 +1,55 @@
+<style>
+    @media only screen and (max-width: 768px) {
+        #content-container {
+            padding: 30px;
+            text-align: center;
+        }
+
+        #laptop_frame {
+            width: 300px;
+        }
+    }
+
+    @media only screen and (min-width: 768px) {
+        article {
+            height: 100%;
+            padding: 30px;
+            text-align: center;
+        }
+
+        article section {
+            height: 100%;
+            text-align: center;
+        }
+
+        article section:before {
+            content: '';
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+            margin-right: -0.25em;
+        }
+
+        article section h1 {
+            color: grey;
+            font-family: sans-serif;
+            font-weight: normal;
+            font-size: 30px;
+            display: inline-block;
+            vertical-align: middle;
+            width: 300px;
+        }
+
+        #laptop_frame {
+            float: left;
+            padding: 30px;
+            width: 50%;
+        }
+    }
+</style>
+<img id="laptop_frame" src="images/laptop_frame_empty.png" alt="">
+<article>
+    <section>
+        <h1>Design your </h1>
+    </section>
+</article>
