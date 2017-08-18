@@ -5,6 +5,8 @@ body {
 
 #content-container {
     height: 100%;
+    margin-top: 70px;
+    padding: 30px;
 }
 
 header {
@@ -13,8 +15,12 @@ header {
     -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
     height: 50px;
+    left: 0;
     overflow: hidden;
     padding: 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
 html {
