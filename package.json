@@ -1,25 +1,19 @@
 {
-    "name": "payper",
+    "name": "PayPer-Print",
     "version": "0.0.0",
-    "description": "A NodeJS server designed for PayPer",
-    "main": "bin/www.js",
-    "bin": {
-        "payper": "www.js"
-    },
+    "description": "A NodeJS server to host PayPer and serve customers",
+    "main": "www.js",
     "scripts": {
-        "test": "node bin/www.js"
+        "test": "node www.js"
+    },
+    "keywords": [],
+    "author": "Aanand Kainth",
+    "license": "ISC",
+    "dependencies": {
+        "express": "4.15.4"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/akainth015/PayPer.git"
-    },
-    "author": "Aanand Kainth & Joe Zou",
-    "license": "UNLICENSED",
-    "bugs": {
-        "url": "https://github.com/akainth015/PayPer/issues"
-    },
-    "homepage": "https://github.com/akainth015/PayPer#readme",
-    "dependencies": {
-        "express": "4.15.4"
+        "url": "https://github.com/akainth015/PayPer"
     }
 }
