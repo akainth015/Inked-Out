@@ -1,0 +1,135 @@
+body {
+    height: 200%;
+    margin: 0;
+}
+
+html {
+    height: 100%;
+}
+
+header {
+    background: #FFFFFF;
+    -webkit-box-shadow: 0 0 10px black;
+    -moz-box-shadow: 0 0 10px black;
+    box-shadow: 0 0 10px black;
+    left: 0;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    width: 100%;
+}
+
+#fragment-container {
+    margin-top: 124px;
+}
+
+#header_top {
+    align-items: center;
+    background: black url('../images/header_bg.png') fixed;
+    background-size: 100% 200%;
+    background-position: 0 -250px;
+    display: flex;
+    justify-content: center;
+    height: 150px;
+    padding: 10px;
+}
+
+/*#header_top img {*/
+/*filter: invert();*/
+/*height: 64px;*/
+/*}*/
+
+/*#header_top h1 {*/
+/*color: white;*/
+/*display: inline;*/
+/*font-family: sans-serif;*/
+/*margin: 0 0 0 20px;*/
+/*}*/
+
+#header_bottom {
+    height: 40px;
+    margin-left: 0;
+    text-align: left;
+    width: 100%;
+}
+
+#header_bottom ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+#header_bottom ul li {
+    cursor: pointer;
+    display: inline-block;
+    font-family: sans-serif;
+    font-size: 1em;
+    margin-top: -30px;
+    padding: 10px;
+    text-align: center;
+    width: 10%;
+}
+
+#header_bottom ul li img {
+    height: 80px;
+    padding: 0 0;
+    vertical-align: middle;
+}
+
+#header_bottom ul li:hover ~ hr {
+    opacity: 1;
+}
+
+#header_bottom ul li:nth-child(1):hover ~ hr {
+    margin-left: 24%;
+}
+
+#header_bottom ul li:nth-child(2):hover ~ hr {
+    margin-left: 35%;
+}
+
+#header_bottom ul li:nth-child(3):hover ~ hr {
+    margin-left: 45%;
+    width: 10%;
+}
+
+#header_bottom ul li:nth-child(4):hover ~ hr {
+    margin-left: 54%;
+}
+
+#header_bottom ul li:nth-child(5):hover ~ hr {
+    margin-left: 66%;
+}
+
+#header_bottom ul hr {
+    background: #000;
+    border: none;
+    height: 2px;
+    margin: -32px 0 0 45%;
+    opacity: 0;
+    transition: 500ms ease-in-out;
+    width: 10%;
+}
+
+#header-logo {
+    width: 5% !important;
+}
+
+@keyframes shrink-header {
+    from {
+        height: 150px;
+    }
+    to {
+        height: 0;
+    }
+}
+
+@keyframes enlarge-header {
+    from {
+        height: 0;
+    }
+    to {
+        height: 150px;
+    }
+}

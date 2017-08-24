@@ -1,0 +1,9 @@
+body {
+    background: url('../images/background.png');
+}
+#fragment-container {
+    display: flex;
+}
+#fragment-container h1 {
+    text-align: center;
+}
