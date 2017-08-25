@@ -1,9 +1,88 @@
-body {
-    background: url('../images/background.png');
-}
-#fragment-container {
+#home {
+    align-items: flex-start;
     display: flex;
+    height: 100%;
 }
-#fragment-container h1 {
-    text-align: center;
+
+#home #welcome-to-inked-out {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    color: white;
+    float: left;
+    padding-left: 10%;
+    padding-top: 190px;
+    padding-right: 100px;
+    width: 50%;
+}
+
+#home #sidebar {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    color: lightslategray;
+    float: right;
+    height: calc(100% - 110px);
+    margin-top: 110px;
+    padding: 80px 40px 40px;
+    width: 40%;
+}
+
+#home #sidebar input {
+    background-color: lightgray;
+    border: none;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline-block;
+    height: 40px;
+    margin: 3px;
+    opacity: 0.5;
+    padding: 14px;
+    vertical-align: middle;
+    width: 100%;
+}
+
+#home #sidebar label input {
+    margin-right: 0;
+    padding: 10px;
+    width: 83.7%;
+}
+
+#home #sidebar button {
+    background-color: lightgray;
+    border: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 40px;
+    padding: 10px;
+    opacity: 0.5;
+    width: 100%;
+}
+
+#home p #flickaroo {
+    -webkit-animation: fade-in-out 2s infinite 1s;
+    -o-animation: fade-in-out 2s infinite 1s;
+    animation: fade-in-out 2s infinite 1s;
+}
+
+@keyframes fade-in-out {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 10px;
 }

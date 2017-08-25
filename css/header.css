@@ -1,0 +1,95 @@
+header {
+    -webkit-box-shadow: 0 0 5px black;
+    -moz-box-shadow: 0 0 5px black;
+    box-shadow: 0 0 5px black;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+#header-image-container {
+    background: black;
+    height: 50px;
+    overflow: hidden;
+    padding: 10px;
+    -webkit-transition: height 0.5s;
+    -moz-transition: height 0.5s;
+    -ms-transition: height 0.5s;
+    -o-transition: height 0.5s;
+    transition: height 0.5s;
+}
+
+.header-image-container-small {
+    height: 0 !important;
+}
+
+#navigation-container {
+    background-color: white;
+    height: 40px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+#navigation-container hr {
+    background-color: black;
+    border: none;
+    height: 2px;
+    margin: -12px 0 0 50%;
+    opacity: 0;
+    transform: translate(-50%, 0);
+    -webkit-transition: 500ms ease-in-out;
+    -moz-transition: 500ms ease-in-out;
+    -ms-transition: 500ms ease-in-out;
+    -o-transition: 500ms ease-in-out;
+    transition: 500ms ease-in-out;
+    width: 64px;
+}
+
+#navigation-container img {
+    margin-top: -14px;
+    vertical-align: middle;
+    width: 64px;
+}
+
+#navigation-container li {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline-block;
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    width: 19%;
+}
+
+#navigation-container li:hover ~ hr, #navigation-container img:hover ~ hr {
+    opacity: 1;
+}
+
+#navigation-container li:hover ~ hr {
+    width: 19%;
+}
+
+#navigation-container li:nth-child(1):hover ~ hr {
+    margin-left: calc(50% - 34% + 32px);
+}
+
+#navigation-container li:nth-child(2):hover ~ hr {
+    margin-left: calc(50% - 14.5% + 32px);
+}
+
+#navigation-container img:nth-child(3):hover ~ hr {
+    margin-left: 50%;
+}
+
+#navigation-container li:nth-child(4):hover ~ hr {
+    margin-left: calc(50% + 14.5% - 32px);
+}
+
+#navigation-container li:nth-child(5):hover ~ hr {
+    margin-left: calc(50% + 34% - 32px);
+}

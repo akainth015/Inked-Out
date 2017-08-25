@@ -1,9 +1,16 @@
 addEventListener('scroll', function() {
-    requestAnimationFrame(function() {
-        if (scrollY === 0) {
-            document.querySelector('#header_top').style.animation = 'enlarge-header 0.5s forwards';
+    requestAnimationFrame(function(number) {
+        if (scrollY < 10) {
+            document.getElementById('header-image-container').classList.remove('header-image-container-small');
         } else {
-            document.querySelector('#header_top').style.animation = 'shrink-header 0.5s forwards';
+            document.getElementById('header-image-container').classList.add('header-image-container-small');
         }
     });
 });
+/* Apply effects to the flickaroo */
+const flickaroo = document.getElementById('flickaroo'), flicks = ['event', 'campaign', 'life', 'business', 'channel'];
+var currentFlick = 0;
+setInterval(function() {
+    flickaroo.textContent = flicks[++currentFlick % flicks.length];
+}, 2000);
+/* Add listener to the form */

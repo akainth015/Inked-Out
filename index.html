@@ -1,29 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <link class="fragment-style" rel="stylesheet" href="css/home.css">
+        <link rel="stylesheet" href="css/james.css">
+        <link rel="stylesheet" href="css/header.css">
         <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/home.css">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Inked Out</title>
     </head>
     <body>
         <header>
-            <div id="header_top">
-                <!--<img src="images/logo.png">-->
-                <!--<h1>Inked Out</h1>-->
+            <div id="header-image-container">
+                <h1 style="color: white; text-align: center; margin-top: 10px;">Inked Out</h1>
             </div>
-            <nav id="header_bottom">
-                <ul>
+            <nav>
+                <ul id="navigation-container">
                     <li>Home</li>
+                    <li>About</li>
+                    <img src="images/logo.png" alt="Logo">
                     <li>Pricing</li>
-                    <li id="header-logo"><img src="images/logo.png"></li>
                     <li>Order</li>
-                    <li>Contact</li>
-                    <hr />
+                    <hr>
                 </ul>
             </nav>
         </header>
+        <div class="fragment" id="home">
+            <div id="welcome-to-inked-out">
+                <h2>Welcome to Inked Out</h2>
+
+                <h4>Get all your printing needs covered, locally.</h4>
+
+                <p style="line-height: 2rem;">Powered by state of the art printers and the highest quality inks
+                    available, Inked Out is definitely the way to go for a print. Using our online order form, you can
+                    get your print delivered to you within hours. And we can guarantee delivery within two business
+                    days.</p>
+
+                <h3>Don't have a designer?</h3>
+                <p style="line-height: 2rem;">We can help you out with experienced graphic artists, so you
+                    can focus on what needs attention, like your <span id="flickaroo">event</span>.</p>
+            </div>
+            <div id="sidebar">
+                <p>Need to make a quick purchase? Order here:</p>
+                <form action="" onsubmit="return false;">
+                    <input placeholder="Name" type="text">
+                    <input placeholder="Email" type="email">
+                    <label>Deliver on<input placeholder="Receive by: " type="date"></label>
+                    <input type="submit" value="Order">
+                </form>
+                <hr style="margin: 20px 100px;">
+                <p>Check out our excellent pricing policy:</p>
+                <button>Pricing</button>
+            </div>
+        </div>
         <script src="js/index.js"></script>
     </body>
 </html>
