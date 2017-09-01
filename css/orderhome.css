@@ -4,11 +4,23 @@
     height: 100%;
 }
 
-#home #welcome-to-inked-out {
+body {
+    background-color: white;
+    font-family: sans-serif;
+    height: 100%;
+    margin: 0;
+}
+
+html {
+    height: 100%;
+}
+
+
+#home #previewside {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    color: white;
+    color: lightslategray;
     float: left;
     padding-left: 10%;
     padding-top: 190px;
@@ -26,7 +38,7 @@
     height: calc(100% - 110px);
     margin-top: 110px;
     padding: 80px 40px 40px;
-    width: 40%;
+    width: 100%;
 }
 
 #home #sidebar input {
@@ -44,13 +56,13 @@
     opacity: 0.5;
     padding: 14px;
     vertical-align: middle;
-    width: 100%;
+    width: 50%;
 }
 
 #home #sidebar label input {
     margin-right: 0;
     padding: 10px;
-    width: 83.7%;
+    width: 50%;
 }
 
 #home #sidebar button {
@@ -60,14 +72,31 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     height: 40px;
-    padding: 10px;
+   
+    vertical-align: middle;
+    margin: 3px;
     
     opacity: 0.5;
-    width: 100%;
+    width: 15%;
 }
 
 #home #order input{
 	margin-top: 20px;
+}
+
+#home #previewside #image-preview {
+	
+    border: 20px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 100%;
+   
+    vertical-align: middle;
+    margin: 3px;
+    
+    
+    width: 100%;
 }
 
 #home p #flickaroo {

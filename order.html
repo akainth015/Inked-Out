@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="css/james.css">
+        <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="css/orderhome.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Order - Inked Out</title>
+    </head>
+    <body>
+        <header>
+            <div id="header-image-container">
+                <h1 style="color: white; text-align: center; margin-top: 10px;">Inked Out</h1>
+            </div>
+            <nav>
+                <ul id="navigation-container">
+                    <a href="index.html"><li>Home</li></a>
+                    <li>About</li>
+                    <a href="index.html"><img src="images/logo.png" alt="Logo"></a>
+                    <li>Pricing</li>
+                    <a href="order.html"><li>Order</li></a>
+                    <hr>
+                </ul>
+            </nav>
+        </header>
+        
+        <div class="fragment" id="home">
+        
+        <div id="sidebar">
+                <p><h1>Fill Out Order</h1></p>
+                <form action="success.html" method="post"onsubmit="return false;" runat="server" id="form1">
+                	Contact Information:<br>
+                    <input name="name"placeholder="Name" type="text">
+                    <br>
+                    
+                    <input name="email" placeholder="Email" type="email">
+                    <br>
+                    <br>
+                    <!--<input placeholder="Number" type="tel">
+                    <br>-->
+                    
+                    Image Information:<br>
+                    <input type="file" name="file" placeholder="File" accept="image/*" onchange="loadFile(event)" align="center">
+                    <br>
+                    <input name="size" type="text" placeholder="Size">
+                    <br>
+                    <input name="quantity" type="number" placeholder="Quantity">
+                    <br>
+                    <input name="papertype" type="text" placeholder="Paper Type">
+                    <br>
+                    <br>
+                    <label>Deliver on: <br><input name="date" placeholder="Receive by: " type="date"></label>
+
+                    <br>
+                    
+                    <p id="price"></p>
+                    
+                    
+                    <input id="order" type="submit" value="Order">
+                    <br>
+                	
+                	<br>
+                	<p>Check out our excellent pricing policy in depth: <button>Pricing</button></p>
+                	
+                </form>
+                
+            </div>
+        	<div id="previewside">
+           <p><h2>Preview Image:</h2></p>
+           
+           <img id="image-preview" src="#" alt="Image Preview">
+           
+           
+           </div>
+        	<script>
+                var loadFile = function(event) {
+    			var output = document.getElementById('image-preview');
+    			output.src = URL.createObjectURL(event.target.files[0]);
+    			document.getElementById("image-preview").style.height = "100%";
+    			document.getElementById("image-preview").style.width = "100%";
+  				};
+    			</script>
+    			
+    			<script src="formr.js"></script>
+                
+                <script>
+            		const myForm = new Formr(document.querySelector('form'));
+            		myForm.useAJAX();
+            		myForm.on('submit', (e) => {
+                	e.preventDefault();
+                	const XHR = new XMLHttpRequest();
+                	XHR.open('post', 'https://fathomless-chamber-47185.herokuapp.com/submit-order');
+               	 	XHR.send(myForm.getFormData());
+            	});
+        	</script>
+            
+        </div>
+        <script src="js/index.js"></script>
+    </body>
+</html>

@@ -8,7 +8,7 @@ addEventListener('scroll', function() {
     });
 });
 /* Apply effects to the flickaroo */
-const flickaroo = document.getElementById('flickaroo'), flicks = ['event', 'campaign', 'life', 'business', 'channel'];
+const flickaroo = document.getElementById('flickaroo'), flicks = ['event', 'project', 'campaign', 'life', 'business', 'channel'];
 var currentFlick = 0;
 setInterval(function() {
     flickaroo.textContent = flicks[++currentFlick % flicks.length];

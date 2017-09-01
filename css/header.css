@@ -34,6 +34,7 @@ header {
     text-align: center;
 }
 
+
 #navigation-container hr {
     background-color: black;
     border: none;
@@ -64,6 +65,7 @@ header {
     padding: 10px;
     text-align: center;
     width: 19%;
+    color: black;
 }
 
 #navigation-container li:hover ~ hr, #navigation-container img:hover ~ hr {
@@ -91,5 +93,33 @@ header {
 }
 
 #navigation-container li:nth-child(5):hover ~ hr {
+    margin-left: calc(50% + 34% - 32px);
+}
+
+#navigation-container a:hover ~ hr, #navigation-container a:hover ~ hr {
+    opacity: 1;
+}
+
+#navigation-container a:hover ~ hr {
+    width: 19%;
+}
+
+#navigation-container a:nth-child(1):hover ~ hr {
+    margin-left: calc(50% - 34% + 32px);
+}
+
+#navigation-container a:nth-child(2):hover ~ hr {
+    margin-left: calc(50% - 14.5% + 32px);
+}
+
+#navigation-container a:nth-child(3):hover ~ hr {
+    margin-left: 50%;
+}
+
+#navigation-container a:nth-child(4):hover ~ hr {
+    margin-left: calc(50% + 14.5% - 32px);
+}
+
+#navigation-container a:nth-child(5):hover ~ hr {
     margin-left: calc(50% + 34% - 32px);
 }

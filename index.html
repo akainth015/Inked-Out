@@ -16,11 +16,11 @@
             </div>
             <nav>
                 <ul id="navigation-container">
-                    <li>Home</li>
+                    <a href="index.html"><li>Home</li></a>
                     <li>About</li>
-                    <img src="images/logo.png" alt="Logo">
+                    <a href="index.html"><img src="images/logo.png" alt="Logo"></a>
                     <li>Pricing</li>
-                    <li>Order</li>
+                    <a href="order.html"><li>Order</li></a>
                     <hr>
                 </ul>
             </nav>
@@ -43,10 +43,11 @@
             <div id="sidebar">
                 <p>Need to make a quick purchase? Order here:</p>
                 <form action="" onsubmit="return false;">
-                    <input placeholder="Name" type="text">
-                    <input placeholder="Email" type="email">
-                    <label>Deliver on<input placeholder="Receive by: " type="date"></label>
-                    <input type="submit" value="Order">
+                    <input placeholder="Name" type="text" name="name">
+                    <input placeholder="Email" type="email" name="email">
+                    <label>Deliver on<input placeholder="Receive by: " type="date" name="date"></label>
+                    
+                    <input id="order "type="submit" value="Order">
                 </form>
                 <hr style="margin: 20px 100px;">
                 <p>Check out our excellent pricing policy:</p>
