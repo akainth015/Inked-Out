@@ -7,12 +7,17 @@
 }
 
 #order-page form input {
+    border: solid lightgray thin;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     margin: 10px 10px 0 0;
     padding: 10px;
     width: 100%;
+}
+
+#order-page form input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px white inset;
 }
 
 #order-page form input[type=submit] {

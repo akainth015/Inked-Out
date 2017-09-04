@@ -47,3 +47,15 @@ Formr.prototype.useAJAX = function(ajax) {
         this.context.removeEventListener('submit', Formr._preventRedirect);
     }
 };
+
+/**
+ * Empty all fields on the form, except that of the submit button
+ */
+Formr.prototype.empty = function() {
+    const formChildren = this.context.children;
+    for (let i = 0; i < formChildren.length; i++) {
+        if (formChildren[i].type !== 'submit') {
+            formChildren[i].value = '';
+        }
+    }
+};
