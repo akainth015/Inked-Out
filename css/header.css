@@ -1,16 +1,14 @@
-header {
-    -webkit-box-shadow: 0 0 5px black;
-    -moz-box-shadow: 0 0 5px black;
-    box-shadow: 0 0 5px black;
-    left: 0;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 10;
+#header-container {
+    -webkit-animation: fade-in 1s 5s forwards;
+    -o-animation: fade-in 1s 5s forwards;
+    animation: fade-in 1s 0s forwards;
+    opacity: 0;
+    z-index: 5;
 }
-
-#header-image-container {
-    background: black;
+#header-container header {
+    background-color: black;
+    color: white;
+    font-family: sans-serif;
     height: 50px;
     overflow: hidden;
     padding: 10px;
@@ -21,21 +19,76 @@ header {
     transition: height 0.5s;
 }
 
-.header-image-container-small {
-    height: 0 !important;
+#header-container header.collapsed {
+    height: 0;
 }
 
-#navigation-container {
-    background-color: white;
-    height: 40px;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+#header-container header h1 {
+    margin-top: 10px;
     text-align: center;
 }
 
+#header-container nav {
+    background-color: white;
+    -webkit-box-shadow: 0 0 5px black;
+    -moz-box-shadow: 0 0 5px black;
+    box-shadow: 0 0 5px black;
+    height: 40px;
+    text-align: center;
+}
 
-#navigation-container hr {
+#header-container nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#header-container nav ul img {
+    height: 64px;
+    margin-top: -14px;
+    vertical-align: middle;
+}
+
+#header-container nav ul li {
+    cursor: pointer;
+    display: inline-block;
+    font-family: sans-serif;
+    width: 19%;
+}
+
+#header-container nav ul li a {
+    color: black;
+    text-decoration: none;
+}
+
+#header-container nav ul li:hover ~ hr {
+    opacity: 1;
+    width: 19%;
+}
+
+#header-container nav ul li:nth-child(1):hover ~ hr {
+    margin-left: calc(50% - 28.5% - 32px);
+}
+
+#header-container nav ul li:nth-child(2):hover ~ hr {
+    margin-left: calc(50% - 9.5% - 32px);
+}
+
+#header-container nav ul img:nth-child(3):hover ~ hr {
+    margin-left: 50%;
+    opacity: 1;
+    width: 64px;
+}
+
+#header-container nav ul li:nth-child(4):hover ~ hr {
+    margin-left: calc(50% + 9.5% + 32px);
+}
+
+#header-container nav ul li:nth-child(5):hover ~ hr {
+    margin-left: calc(50% + 28.5% + 32px);
+}
+
+#header-container nav ul hr {
     background-color: black;
     border: none;
     height: 2px;
@@ -49,77 +102,11 @@ header {
     transition: 500ms ease-in-out;
     width: 64px;
 }
-
-#navigation-container img {
-    margin-top: -14px;
-    vertical-align: middle;
-    width: 64px;
-}
-
-#navigation-container li {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    display: inline-block;
-    margin: 0;
-    padding: 10px;
-    text-align: center;
-    width: 19%;
-    color: black;
-}
-
-#navigation-container li:hover ~ hr, #navigation-container img:hover ~ hr {
-    opacity: 1;
-}
-
-#navigation-container li:hover ~ hr {
-    width: 19%;
-}
-
-#navigation-container li:nth-child(1):hover ~ hr {
-    margin-left: calc(50% - 34% + 32px);
-}
-
-#navigation-container li:nth-child(2):hover ~ hr {
-    margin-left: calc(50% - 14.5% + 32px);
-}
-
-#navigation-container img:nth-child(3):hover ~ hr {
-    margin-left: 50%;
-}
-
-#navigation-container li:nth-child(4):hover ~ hr {
-    margin-left: calc(50% + 14.5% - 32px);
-}
-
-#navigation-container li:nth-child(5):hover ~ hr {
-    margin-left: calc(50% + 34% - 32px);
-}
-
-#navigation-container a:hover ~ hr, #navigation-container a:hover ~ hr {
-    opacity: 1;
-}
-
-#navigation-container a:hover ~ hr {
-    width: 19%;
-}
-
-#navigation-container a:nth-child(1):hover ~ hr {
-    margin-left: calc(50% - 34% + 32px);
-}
-
-#navigation-container a:nth-child(2):hover ~ hr {
-    margin-left: calc(50% - 14.5% + 32px);
-}
-
-#navigation-container a:nth-child(3):hover ~ hr {
-    margin-left: 50%;
-}
-
-#navigation-container a:nth-child(4):hover ~ hr {
-    margin-left: calc(50% + 14.5% - 32px);
-}
-
-#navigation-container a:nth-child(5):hover ~ hr {
-    margin-left: calc(50% + 34% - 32px);
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }

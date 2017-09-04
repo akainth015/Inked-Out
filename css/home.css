@@ -1,93 +1,107 @@
-#home {
-    align-items: flex-start;
-    display: flex;
+#home-page {
     height: 100%;
 }
 
-#home #welcome-to-inked-out {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+#home-page article {
+    height: 100%;
+}
+
+#home-page article section:first-child {
+    align-items: center;
     color: white;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: sans-serif;
+    font-size: 40px;
+    height: 100%;
+    justify-content: center;
+}
+
+#home-page article section:first-child div {
+    text-align: center;
+    width: 100%;
+}
+
+#home-page article section:first-child img {
+    -webkit-animation: bounce 1s 0s alternate infinite;
+    -o-animation: bounce 1s 0s alternate infinite;
+    animation: bounce 1s 0s alternate infinite;
+    cursor: pointer;
+    left: 50%;
+    position: fixed;
+    top: 90%;
+    transform: translate(-50%, -50%);
+    width: 32px;
+    z-index: 0;
+}
+
+#home-page article section:nth-child(2) {
+    overflow: hidden;
+    padding: 50px 20%;
+}
+
+#home-page article section:nth-child(2) img {
+    max-width: 50%;
+    filter: grayscale(100%);
     float: left;
-    padding-left: 10%;
-    padding-top: 190px;
-    padding-right: 100px;
+    margin-right: 40px;
+}
+
+#home-page article section:nth-child(2) h3 {
+    font-family: sans-serif;
+    font-size: 30px;
+}
+
+#home-page article section:nth-child(2) p {
+    color: gray;
+    font-family: sans-serif;
+    font-size: 20px;
+    line-height: 2em;
+}
+
+#home-page article section:nth-child(2) button {
+    background-color: yellow;
+    border: none;
+    padding: 20px;
     width: 50%;
 }
 
-#home #sidebar {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    background: #FFFFFF;
-    color: lightslategray;
+#home-page article section:nth-child(3) {
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    background-size: cover;
+    font-family: sans-serif;
+    font-size: 40px;
+    padding: 50px 20%;
+    overflow: hidden;
+}
+
+#home-page article section:nth-child(3) img {
     float: right;
-    height: calc(100% - 110px);
-    margin-top: 110px;
-    padding: 80px 40px 40px;
-    width: 40%;
+    width: 300px;
 }
 
-#home #sidebar input {
-    background-color: lightgray;
-    border: none;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    display: inline-block;
-    height: 40px;
-    margin: 3px;
-    opacity: 0.5;
-    padding: 14px;
-    vertical-align: middle;
-    width: 100%;
+#home-page article section:nth-child(3) h3 {
+    font-size: 30px;
+    margin: 10px 0;
 }
 
-#home #sidebar label input {
-    margin-right: 0;
-    padding: 10px;
-    width: 83.7%;
+#home-page article section:nth-child(3) p {
+    font-size: 20px;
+    line-height: 2em;
 }
 
-#home #sidebar button {
-    background-color: lightgray;
-    border: none;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    height: 40px;
-    padding: 10px;
-    
-    opacity: 0.5;
-    width: 100%;
+#home-page article section:nth-child(4) {
+    background-color: white;
+    font-family: sans-serif;
+    padding: 50px 20%;
 }
 
-#home #order input{
-	margin-top: 20px;
-}
-
-#home p #flickaroo {
-    -webkit-animation: fade-in-out 2s infinite 1s;
-    -o-animation: fade-in-out 2s infinite 1s;
-    animation: fade-in-out 2s infinite 1s;
-}
-
-@keyframes fade-in-out {
-    0% {
-        opacity: 1;
+@keyframes bounce {
+    from {
+        margin-top: 0;
     }
-    50% {
-        opacity: 0;
+    to {
+        margin-top: 20px;
     }
-    100% {
-        opacity: 1;
-    }
-}
-
-::-webkit-scrollbar {
-    width: 10px;
 }

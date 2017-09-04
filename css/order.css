@@ -1,0 +1,21 @@
+#order-page {
+    background: white;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 160px 30% 50px;
+}
+
+#order-page form input {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 10px;
+    padding: 10px;
+    width: 100%;
+}
+
+#order-page form input[type=submit] {
+    background-color: yellow;
+    border: none;
+}
