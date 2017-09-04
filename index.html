@@ -138,7 +138,7 @@
                 const XHR = new XMLHttpRequest();
                 XHR.open('POST', 'https://inked-out.herokuapp.com/');
                 XHR.addEventListener('load', function() {
-                    console.log(XHR.responseText);
+                    alert(XHR.responseText);
                 });
                 XHR.send(orderForm.getFormData());
             });
