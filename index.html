@@ -22,11 +22,11 @@
             </header>
             <nav>
                 <ul>
-                    <li><a onclick="PageManager.switchToPage('home')">Home</a></li>
-                    <li>About</li>
-                    <img src="images/logo.png" alt="">
+                    <li onclick="PageManager.switchToPage('home')"><a>Home</a></li>
+                    <li onclick="PageManager.switchToPage('home'); $('html, body').animate({scrollTop: $('#home-page').find('article section:nth-child(2)').offset().top});">About</li>
+                    <img onclick="PageManager.switchToPage('home')" src="images/logo.png" alt="">
                     <li>Pricing</li>
-                    <li><a onclick="PageManager.switchToPage('order')">Order</a></li>
+                    <li onclick="PageManager.switchToPage('order')"><a>Order</a></li>
                     <hr>
                 </ul>
             </nav>
@@ -55,23 +55,29 @@
                 <section>
                     <h3>Still have questions?</h3>
                     <p>Call one of our reps at 408-000-0000 and we'll answer all your questions!</p>
+
+                    <sub>* All images created by Inked Out can be published to our gallery.</sub>
                 </section>
             </article>
         </div>
-        <div class="page" id="order-page">
+        <div hidden class="page" id="order-page">
             <form action="/" id="order-form">
+                <img id="image-preview" style="max-width: 100%;" src="" alt="">
                 <h4 style="margin: 0; font-family: sans-serif;">Contact</h4><br>
                 <input name="name" placeholder="Name">
                 <input type="email" name="email" placeholder="Email">
-                <h4 style="margin:5px; font-family: sans-serif;">Image</h4>
-                <input type="file" name="file" placeholder="File">
+                <h4 style="margin:10px; font-family: sans-serif;">Image</h4>
+                <input id="image-input" type="file" name="file" placeholder="File">
                 <input type="text" name="size" placeholder="Size">
                 <input type="number" name="quantity" placeholder="Quantity">
                 <input type="text" name="paper-type" placeholder="Paper Type">
-                <h4 style="margin:5px; font-family: sans-serif;">And finally... get it to me by</h4>
+                <h4 style="margin:10px; font-family: sans-serif;">And finally... get it to me by</h4>
                 <input type="date" name="date">
                 <input type="submit">
             </form>
+        </div>
+        <div hidden class="page" id="pricing-page">
+
         </div>
         <script src="js/formr.js"></script>
         <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -84,11 +90,12 @@
                     if (id === PageManager._activePage) {
                         return;
                     }
-                    $('.page').fadeOut(function() {
-                        PageManager[id].fadeIn();
+                    $('.page').fadeOut(() => {
+                        PageManager[id].fadeIn(() => {
+                            PageManager._activePage = id;
+                            location.hash = id;
+                        });
                     });
-                    PageManager._activePage = id;
-                    location.hash = id;
                 }
             };
         </script>
@@ -116,11 +123,20 @@
             }
         </script>
         <script>
+            $('#image-input').change(function(e) {
+                if (e.target.files[0]) {
+                    const fileReader = new FileReader();
+                    fileReader.addEventListener('load', function() {
+                        $('#image-preview').attr('src', fileReader.result);
+                    });
+                    fileReader.readAsDataURL(e.target.files[0]);
+                }
+            });
             const orderForm = new Formr(document.getElementById('order-form'));
             orderForm.useAJAX(true);
             orderForm.on('submit', function() {
                 const XHR = new XMLHttpRequest();
-                XHR.open('POST', 'https://fathomless-chamber-47185.herokuapp.com/');
+                XHR.open('POST', 'https://inked-out.herokuapp.com/');
                 XHR.addEventListener('load', function() {
                     console.log(XHR.responseText);
                 });

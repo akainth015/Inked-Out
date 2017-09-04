@@ -49,6 +49,10 @@
     vertical-align: middle;
 }
 
+#header-container nav ul img {
+    cursor: pointer;
+}
+
 #header-container nav ul li {
     cursor: pointer;
     display: inline-block;
