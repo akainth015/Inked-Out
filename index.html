@@ -71,20 +71,33 @@
                 <h4 style="margin: 0; font-family: sans-serif;">Contact</h4><br>
                 <input name="name" placeholder="Name">
                 <input type="email" name="email" placeholder="Email">
+                <input type="tel" placeholder="Phone Number">
                 <h4 style="margin:10px; font-family: sans-serif;">Image</h4>
                 <input id="image-input" type="file" name="file" placeholder="File">
-                <input type="text" name="size" placeholder="Size">
-                <input type="number" name="quantity" placeholder="Quantity">
-                <input type="text" name="paper" placeholder="Paper Type">
+                <label for="size">Size</label><select name="size" id="size">
+                    <option value="18x24">18 x 24</option>
+                    <option value="22x28">22 x 28</option>
+                    <option value="24x36">24 x 36</option>
+                    <option value="36x48">36 x 48</option>
+                </select>
+                <input min="0" type="number" name="quantity" placeholder="Quantity">
+                <label for="paper">Paper Type</label><select name="paper" id="paper">
+                    <option value="regular">Regular</option>
+                    <option value="bond">Bond</option>
+                    <option value="vinyl">Vinyl</option>
+                    <option value="vinyl-adhesive">Vinyl Adhesive</option>
+                </select>
+                <label>
+                    <input style="display: inline" type="checkbox">
+                    Grommets
+                </label>
                 <h4 style="margin:10px; font-family: sans-serif;">And finally... get it to me by</h4>
                 <input title="Receive order by" type="date" name="date">
                 <input type="submit">
             </form>
         </div>
         <div class="page" id="pricing-page">
-            <div class="tabbed-pane">
-                <ul></ul>
-            </div>
+
         </div>
         <script src="js/formr.js"></script>
         <script src="js/jquery.js"></script>

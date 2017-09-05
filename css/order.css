@@ -7,7 +7,7 @@
     padding: 160px 30% 50px;
 }
 
-#order-page form input {
+#order-page form input, #order-page form select {
     border: solid lightgray thin;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -15,6 +15,12 @@
     margin: 10px 10px 0 0;
     padding: 10px;
     width: 100%;
+}
+
+#order-page form label {
+    display: inline-block;
+    font-family: sans-serif;
+    margin: 10px 10px 0;
 }
 
 #order-page form input:-webkit-autofill {
