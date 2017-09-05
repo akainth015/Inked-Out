@@ -29,9 +29,9 @@
                 <ul>
                     <li onclick="PageManager.switchToPage('home'); $('html, body').animate({scrollTop: 0});"><a>Home</a></li>
                     <li onclick="PageManager.switchToPage('home'); $('html, body').animate({scrollTop: $('#home-page').find('article section:nth-child(2)').offset().top - 60});">About</li>
-                    <img onclick="PageManager.switchToPage('home')" src="images/logo.png" alt="">
-                    <li>Pricing</li>
-                    <li onclick="PageManager.switchToPage('order')"><a>Order</a></li>
+                    <img onclick="PageManager.switchToPage('home'); $('html, body').animate({scrollTop: 0});" src="images/logo.png" alt="">
+                    <li onclick="PageManager.switchToPage('pricing');">Pricing</li>
+                    <li onclick="PageManager.switchToPage('order');"><a>Order</a></li>
                     <hr>
                 </ul>
             </nav>
@@ -65,7 +65,7 @@
                 </section>
             </article>
         </div>
-        <div hidden class="page" id="order-page">
+        <div class="page" id="order-page">
             <form action="/" id="order-form">
                 <img id="image-preview" style="max-width: 100%;" src="" alt="">
                 <h4 style="margin: 0; font-family: sans-serif;">Contact</h4><br>
@@ -81,8 +81,10 @@
                 <input type="submit">
             </form>
         </div>
-        <div hidden class="page" id="pricing-page">
-
+        <div class="page" id="pricing-page">
+            <div class="tabbed-pane">
+                <ul></ul>
+            </div>
         </div>
         <script src="js/formr.js"></script>
         <script src="js/jquery.js"></script>
@@ -114,12 +116,13 @@
                 _activePage: 'home',
                 home: $('#home-page'),
                 order: $('#order-page'),
+                pricing: $('#pricing-page'),
                 switchToPage: function(id) {
                     if (id === PageManager._activePage) {
                         return;
                     }
-                    $('.page').fadeOut(() => {
-                        PageManager[id].fadeIn(() => {
+                    $('.page').fadeOut(function() {
+                        PageManager[id].fadeIn(function() {
                             PageManager._activePage = id;
                             location.hash = id;
                         });
