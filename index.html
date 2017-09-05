@@ -27,8 +27,8 @@
             </header>
             <nav>
                 <ul>
-                    <li onclick="PageManager.switchToPage('home')"><a>Home</a></li>
-                    <li onclick="PageManager.switchToPage('home'); $('html, body').animate({scrollTop: $('#home-page').find('article section:nth-child(2)').offset().top});">About</li>
+                    <li onclick="PageManager.switchToPage('home'); $('html, body').animate({scrollTop: 0});"><a>Home</a></li>
+                    <li onclick="PageManager.switchToPage('home'); $('html, body').animate({scrollTop: $('#home-page').find('article section:nth-child(2)').offset().top - 60});">About</li>
                     <img onclick="PageManager.switchToPage('home')" src="images/logo.png" alt="">
                     <li>Pricing</li>
                     <li onclick="PageManager.switchToPage('order')"><a>Order</a></li>
@@ -77,7 +77,7 @@
                 <input type="number" name="quantity" placeholder="Quantity">
                 <input type="text" name="paper" placeholder="Paper Type">
                 <h4 style="margin:10px; font-family: sans-serif;">And finally... get it to me by</h4>
-                <input type="date" name="date">
+                <input title="Receive order by" type="date" name="date">
                 <input type="submit">
             </form>
         </div>
