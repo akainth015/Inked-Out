@@ -27,9 +27,13 @@
             </header>
             <nav>
                 <ul>
-                    <li onclick="PageManager.switchToPage('home'); $('html, body').animate({scrollTop: 0});"><a>Home</a></li>
-                    <li onclick="PageManager.switchToPage('home'); $('html, body').animate({scrollTop: $('#home-page').find('article section:nth-child(2)').offset().top - 60});">About</li>
-                    <img onclick="PageManager.switchToPage('home'); $('html, body').animate({scrollTop: 0});" src="images/logo.png" alt="">
+                    <li onclick="PageManager.switchToPage('home'); $('html, body').animate({scrollTop: 0});"><a>Home</a>
+                    </li>
+                    <li onclick="PageManager.switchToPage('home'); $('html, body').animate({scrollTop: $('#home-page').find('article section:nth-child(2)').offset().top - 60});">
+                        About
+                    </li>
+                    <img onclick="PageManager.switchToPage('home'); $('html, body').animate({scrollTop: 0});"
+                         src="images/logo.png" alt="">
                     <li onclick="PageManager.switchToPage('pricing');">Pricing</li>
                     <li onclick="PageManager.switchToPage('order');"><a>Order</a></li>
                     <hr>
@@ -71,26 +75,29 @@
                 <h4 style="margin: 0; font-family: sans-serif;">Contact</h4><br>
                 <input name="name" placeholder="Name">
                 <input type="email" name="email" placeholder="Email">
-                <input type="tel" placeholder="Phone Number">
+                <input name="phone" type="tel" placeholder="Phone Number">
                 <h4 style="margin:10px; font-family: sans-serif;">Image</h4>
                 <input id="image-input" type="file" name="file" placeholder="File">
-                <label for="size">Size</label><select name="size" id="size">
+                <label for="size">Size</label>
+                <select name="size" id="size">
                     <option value="18x24">18 x 24</option>
                     <option value="22x28">22 x 28</option>
                     <option value="24x36">24 x 36</option>
                     <option value="36x48">36 x 48</option>
                 </select>
-                <input min="0" type="number" name="quantity" placeholder="Quantity">
-                <label for="paper">Paper Type</label><select name="paper" id="paper">
+                <input min="1" type="number" name="quantity" placeholder="Quantity">
+                <label for="paper">Paper Type</label>
+                <select name="paper" id="paper">
                     <option value="regular">Regular</option>
                     <option value="bond">Bond</option>
                     <option value="vinyl">Vinyl</option>
                     <option value="vinyl-adhesive">Vinyl Adhesive</option>
                 </select>
-                <label>
-                    <input style="display: inline" type="checkbox">
-                    Grommets
-                </label>
+                <div class="style-as-input">
+                    <input id="grommets" name="grommets" style="display: inline; width: auto; margin: 10px;"
+                           type="checkbox">
+                    <label style="margin: 0;" for="grommets">Grommets</label>
+                </div>
                 <h4 style="margin:10px; font-family: sans-serif;">And finally... get it to me by</h4>
                 <input title="Receive order by" type="date" name="date">
                 <input type="submit">
@@ -102,7 +109,7 @@
         <script src="js/formr.js"></script>
         <script src="js/jquery.js"></script>
         <script>
-            const NotificationManager  = {
+            const NotificationManager = {
                 busy: false,
                 context: $('#notification'),
                 queue: [],

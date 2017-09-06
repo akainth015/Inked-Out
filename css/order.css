@@ -7,7 +7,7 @@
     padding: 160px 30% 50px;
 }
 
-#order-page form input, #order-page form select {
+#order-page form input, #order-page form select, #order-page form .style-as-input {
     border: solid lightgray thin;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
