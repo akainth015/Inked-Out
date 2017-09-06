@@ -19,7 +19,7 @@
     </head>
     <body>
         <div id="notification">
-            <h1></h1>
+            <h2></h2>
             <p></p>
         </div>
         <div id="header-container" style="left: 0; position: fixed; top: 0; width: 100%;">
@@ -111,26 +111,17 @@
         <script src="js/jquery.js"></script>
         <script>
             const NotificationManager = {
-                busy: false,
                 context: $('#notification'),
                 queue: [],
                 send: function(title, text) {
-                    if (NotificationManager.busy) {
-                        NotificationManager.queue.push([title, text]);
-                    }
-                    NotificationManager.context.find('h1').text(title);
+                    NotificationManager.context.find('h2').text(title);
                     NotificationManager.context.find('p').text(text);
                     NotificationManager.context.addClass('showing');
-                    NotificationManager.busy = true;
                     setTimeout(function() {
                         NotificationManager.context.removeClass('showing');
-                        NotificationManager.busy = false;
-                        if (NotificationManager.queue.length !== 0) {
-                            NotificationManager.send(NotificationManager.queue.pop());
-                        }
                     }, 2000);
                 }
-            }
+            };
         </script>
         <script>
             const PageManager = {
@@ -190,9 +181,13 @@
                 const XHR = new XMLHttpRequest();
                 XHR.open('POST', 'https://inked-out.herokuapp.com/');
                 XHR.addEventListener('load', function() {
-                    NotificationManager.send('Inked Out', 'Order received and recorded');
+                    NotificationManager.send('Inked Out', XHR.responseText);
                     orderForm.empty();
                     $('#image-preview')[0].src = '';
+                });
+                XHR.addEventListener('error', function() {
+                    NotificationManager.send('Inked Out',
+                        'Eek! Our orders server went down. They should be back up within 24 hours');
                 });
                 NotificationManager.send('Inked Out', 'Sending order to server');
                 XHR.send(orderForm.getFormData());
