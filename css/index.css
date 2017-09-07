@@ -1,6 +1,5 @@
 body {
-    background-size: 80%;
-    background: url('../images/logo-colored.jpg') no-repeat fixed center;
+    background-color: white;
 }
 .float-right {
     float: right;
