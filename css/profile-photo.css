@@ -1,0 +1,25 @@
+.account-photo {
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+}
+
+.account-photo:hover {
+    -webkit-box-shadow: 0 1px 1px black;
+    -moz-box-shadow: 0 1px 1px black;
+    box-shadow: 0 1px 1px black;
+    cursor: pointer;
+}
+
+.account-photo-default {
+    background: url('../images/anonymous-user.png') center;
+    background-size: cover;
+}
+
+.account-photo-round {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}

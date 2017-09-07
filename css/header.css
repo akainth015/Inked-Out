@@ -1,12 +1,28 @@
+body {
+    font-family: sans-serif;
+}
+
 header {
+    background-color: white;
     -webkit-box-shadow: 0 0 5px black;
     -moz-box-shadow: 0 0 5px black;
     box-shadow: 0 0 5px black;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
     left: 0;
     padding: 0 10%;
     position: fixed;
     top: 0;
     width: 100%;
+    z-index: 1;
+}
+
+header div.account-photo-header-top {
+    float: right;
+    height: 50px;
+    margin: 7px 0;
+    width: 50px;
 }
 
 header img.header-logo {
@@ -15,6 +31,37 @@ header img.header-logo {
     width: 64px;
 }
 
-header nav.header-navigation ul.header-navigation-container {
+header nav.header-navigation {
+    display: inline-block;
+}
 
+header nav.header-navigation ul.header-navigation-container {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav.header-navigation ul.header-navigation-container li.header-navigation-option {
+    border-right: solid gray thin;
+    color: darkgray;
+    display: inline-block;
+    height: 64px;
+    font-size: 25px;
+    line-height: 64px;
+    padding: 0 20px;
+    -webkit-transition: color 300ms;
+    -moz-transition: color 300ms;
+    -ms-transition: color 300ms;
+    -o-transition: color 300ms;
+    transition: color 300ms;
+    vertical-align: middle;
+}
+
+header nav.header-navigation ul.header-navigation-container li.header-navigation-option:first-child {
+    border-left: solid gray thin;
+}
+
+header nav.header-navigation ul.header-navigation-container li.header-navigation-option:hover {
+    color: gray;
+    cursor: pointer;
 }

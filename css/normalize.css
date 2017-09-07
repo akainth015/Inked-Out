@@ -7,6 +7,10 @@ body {
     height: 100%;
 }
 
+.hidden {
+    display: none;
+}
+
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 
 /* Document

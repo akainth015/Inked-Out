@@ -1,0 +1,14 @@
+#home main {
+    background-color: white;
+    -webkit-box-shadow: 0 0 5px black;
+    -moz-box-shadow: 0 0 5px black;
+    box-shadow: 0 0 5px black;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 50px 10%;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+}
+

@@ -1,0 +1,13 @@
+body {
+    background-size: 80%;
+    background: url('../images/logo-colored.jpg') no-repeat fixed center;
+}
+.float-right {
+    float: right;
+}
+.float-left {
+    float: left;
+}
+.hidden-js {
+    display: none;
+}
