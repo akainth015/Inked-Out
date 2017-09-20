@@ -44,8 +44,8 @@
 }
 
 #header-container nav ul img {
-    height: 64px;
-    margin-top: -14px;
+    height: 90px;
+    margin-top: -24px;
     vertical-align: middle;
 }
 
@@ -81,7 +81,7 @@
 #header-container nav ul img:nth-child(3):hover ~ hr {
     margin-left: 50%;
     opacity: 1;
-    width: 64px;
+    width: 90px;
 }
 
 #header-container nav ul li:nth-child(4):hover ~ hr {
