@@ -46,7 +46,7 @@
 #header-container nav ul img {
     height: 90px;
     margin-top: -24px;
-    vertical-align: middle;
+    vertical-align: top;
 }
 
 #header-container nav ul img {
@@ -58,6 +58,7 @@
     display: inline-block;
     font-family: sans-serif;
     width: 19%;
+    margin-top: 12px;
 }
 
 #header-container nav ul li a {
@@ -68,14 +69,15 @@
 #header-container nav ul li:hover ~ hr {
     opacity: 1;
     width: 19%;
+    margin-top: -34px;
 }
 
 #header-container nav ul li:nth-child(1):hover ~ hr {
-    margin-left: calc(50% - 28.5% - 32px);
+    margin-left: calc(50% - 28.5% - 76px);
 }
 
 #header-container nav ul li:nth-child(2):hover ~ hr {
-    margin-left: calc(50% - 9.5% - 32px);
+    margin-left: calc(50% - 9.5% - 76px);
 }
 
 #header-container nav ul img:nth-child(3):hover ~ hr {
@@ -85,11 +87,11 @@
 }
 
 #header-container nav ul li:nth-child(4):hover ~ hr {
-    margin-left: calc(50% + 9.5% + 32px);
+    margin-left: calc(50% + 9.5% + 76px);
 }
 
 #header-container nav ul li:nth-child(5):hover ~ hr {
-    margin-left: calc(50% + 28.5% + 32px);
+    margin-left: calc(50% + 28.5% + 76px);
 }
 
 #header-container nav ul hr {
