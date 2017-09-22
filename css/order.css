@@ -4,7 +4,13 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     display: none;
-    padding: 160px 30% 50px;
+    padding: 20px 30% 50px;
+    width: 80%;
+    margin: auto;
+    margin-top: 170px;
+}
+#order-page form {
+    width: 100%;
 }
 
 #order-page form input, #order-page form select, #order-page form .style-as-input {
