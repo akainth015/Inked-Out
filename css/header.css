@@ -57,7 +57,7 @@
     cursor: pointer;
     display: inline-block;
     font-family: sans-serif;
-    width: 12%;
+    width: 19%;
     margin-top: 12px;
 }
 
@@ -68,7 +68,7 @@
 
 #header-container nav ul li:hover ~ hr {
     opacity: 1;
-    width: 12%;
+    width: 19%;
     margin-top: -34px;
 }
 
