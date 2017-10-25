@@ -37,7 +37,7 @@
                     </li>
                     <img onclick="PageManager.switchToPage('home'); $('html, body').animate({scrollTop: 0});"
                          src="images/logoblankspace.png" alt="">
-                    <li onclick="PageManager.switchToPage('pricing');">Pricing</li>
+                    <li onclick="PageManager.switchToPage('pricing');"><a>Pricing</a></li>
                     <li onclick="PageManager.switchToPage('order');"><a>Order</a></li>
                     <hr>
                 </ul>
@@ -296,11 +296,10 @@
                     if (id === PageManager._activePage) {
                         return;
                     }
-                    $('.page').fadeOut(function() {
-                        PageManager[id].fadeIn(function() {
-                            PageManager._activePage = id;
-                            location.hash = id;
-                        });
+                    PageManager[PageManager._activePage].fadeOut(300);
+                    PageManager[id].fadeIn(600, function() {
+                        PageManager._activePage = id;
+                        location.hash = id;
                     });
                 }
             };
@@ -319,6 +318,11 @@
                         $('#header-container').find('header').removeClass('collapsed');
                     } else {
                         $('#header-container').find('header').addClass('collapsed');
+                    }
+                    if (scrollY < 10) {
+                        $('#scroll-button').fadeIn();
+                    } else {
+                        $('#scroll-button').fadeOut();
                     }
                 });
             });
