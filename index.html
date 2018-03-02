@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="css/pricing.css">
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/bebas" type="text/css"/>
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <style>
@@ -86,22 +87,24 @@
                 <input name="phone" type="tel" placeholder="Phone Number">
                 <h4 style="margin:10px; font-family: sans-serif;">Image</h4>
                 <input id="image-input" type="file" name="file" placeholder="File">
-                <label for="size">Size</label>
-                <select name="size" id="size">
-                    <option value="18x24">18 x 24</option>
-                    <!--<option value="22x28">22 x 28</option>-->
-                    <option value="24x36">24 x 36</option>
-                    <option value="36x48">36 x 48</option>
-                </select>
-                <input min="1" type="number" name="quantity" placeholder="Quantity">
                 <label for="paper">Paper Type</label>
                 <select name="paper" id="paper">
                     <option value="regular">Regular</option>
                     <option value="bond">Bond</option>
-                    <!--<option value="vinyl">Vinyl</option>-->
                     <option value="vinyl-adhesive">Vinyl Adhesive</option>
                     <option value="glossy">Photo</option>
+                    <option value="sticker">Sticker</option>
                 </select>
+                <label for="size" id="sizelabel">Size</label>
+                <select name="size" id="size">
+                    <option value="18x24">18 x 24</option>
+                    <option value="24x36">24 x 36</option>
+                    <option value="36x48">36 x 48</option>
+                </select>
+                <input min="1" type="number" name="orderheight" placeholder="Height (in)" id="orderheight">
+                <input min="1" type="number" name="orderwidth" placeholder="Width (in)" id="orderwidth">
+                <input min="1" type="number" name="quantity" placeholder="Quantity">
+
                 <div class="style-as-input">
                     <input id="grommets" name="grommets" style="display: inline; width: auto; margin: 10px;"
                            type="checkbox">
@@ -110,9 +113,10 @@
                 <label for="promoc">Promo Code</label><input title="promo" id="promoc" placeholder="Promo Code" /><br /><br />
                 <h4 style="margin:10px; font-family: sans-serif;">And finally... get it to me by</h4>
                 <input title="Receive order by" type="date" name="date"><br><br><label style="display: inline; width: auto; margin: 10px;">*Included on Poster is a Watermark</label>
-                <input type="submit">
+                <input type="submit" onclick="PageManager.switchToPage('home'); $('html, body').animate({scrollTop: 0});">
             </form>
         </div>
+
         <div class="page" id="pricing-page">
             <br>
             <h2>Pricing</h2>
@@ -266,6 +270,7 @@
                     </tr>
                 </tbody>
             </table>
+            
             <h3>Contact us for any other additional information</h3>
         </div>
         <!--<script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>-->
@@ -361,6 +366,42 @@
                 NotificationManager.send('Inked Out', 'Sending order to server');
                 XHR.send(orderForm.getFormData());
             });
+        </script>
+        <script>
+        var stickerheight = document.getElementById('orderheight');
+        var stickerwidth = document.getElementById('orderwidth');
+        var defaultlabel = document.getElementById('sizelabel')
+        var defaultsize = document.getElementById('size');
+        var papertype = document.getElementById('paper');
+
+
+        papertype.addEventListener('click', checkSticker);
+        papertype.addEventListener('mouseover', checkSticker);
+        papertype.addEventListener('mouseout', checkSticker);
+        defaultsize.addEventListener('click', checkSticker);
+        stickerwidth.addEventListener('click', checkSticker);
+        stickerheight.addEventListener('click', checkSticker);
+
+        defaultlabel.style.visibility = 'hidden';
+        defaultsize.style.visibility = 'hidden';
+        stickerheight.style.visibility = 'hidden';
+        stickerwidth.style.visibility = 'hidden';
+
+
+        function checkSticker() {
+          if (papertype.options[papertype.selectedIndex].value == 'sticker') {
+            defaultlabel.style.visibility = 'hidden';
+            defaultsize.style.visibility = 'hidden';
+            stickerheight.style.visibility = 'visible';
+            stickerwidth.style.visibility = 'visible';
+          } else {
+            defaultlabel.style.visibility = 'visible';
+            defaultsize.style.visibility = 'visible';
+            stickerheight.style.visibility = 'hidden';
+            stickerwidth.style.visibility = 'hidden';
+          };
+        };
+
         </script>
     </body>
 </html>
