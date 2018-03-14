@@ -20,17 +20,17 @@ function pricing() {
   var size = defaultsize.options[defaultsize.selectedIndex].value;
 
 if (vpapertype == 'regular' && size == '18x24') {
-  estimatedPrice = '$11';
+  estimatedPrice = '$12';
   price.textContent = 'Estimated Price: ' + estimatedPrice;
 };
 
 if (vpapertype == 'regular' && size == '24x36') {
-  estimatedPrice = '$21';
+  estimatedPrice = '$23';
   price.textContent = 'Estimated Price: ' + estimatedPrice;
 };
 
 if (vpapertype == 'regular' && size == '36x48') {
-estimatedPrice = '$40';
+estimatedPrice = '$42';
 price.textContent = 'Estimated Price: ' + estimatedPrice;
 };
 
@@ -40,12 +40,12 @@ price.textContent = 'Estimated Price: ' + estimatedPrice;
 };
 
 if (vpapertype == 'bond' && size == '24x36') {
-estimatedPrice = '$22';
+estimatedPrice = '$23';
 price.textContent = 'Estimated Price: ' + estimatedPrice;
 };
 
 if (vpapertype == 'bond' && size == '36x48') {
-estimatedPrice = '$41';
+estimatedPrice = '$42';
 price.textContent = 'Estimated Price: ' + estimatedPrice;
 };
 
@@ -65,27 +65,27 @@ price.textContent = 'Estimated Price: ' + estimatedPrice;
 };
 
 if (vpapertype == 'glossy' && size == '18x24') {
-estimatedPrice = '$13';
+estimatedPrice = '$14';
 price.textContent = 'Estimated Price: ' + estimatedPrice;
 };
 
 if (vpapertype == 'glossy' && size == '24x36') {
-estimatedPrice = '$23';
+estimatedPrice = '$25';
 price.textContent = 'Estimated Price: ' + estimatedPrice;
 };
 
 if (vpapertype == 'glossy' && size == '36x48') {
-estimatedPrice = '$45';
+estimatedPrice = '$47';
 price.textContent = 'Estimated Price: ' + estimatedPrice;
 };
 
 if (papertype.options[papertype.selectedIndex].value == 'sticker') {
  var area = stickerheight.value * stickerwidth.value;
  if (area < 3) {
-   var estimatedPrice = ((area * 2.270903) / (0.58 - (.025 * area) + (.000926 * ((area)^2))));
+   var estimatedPrice = 0;
    price.textContent = 'Estimated Price: ' + '$' + estimatedPrice.toFixed(2);
  } else {
-   var estimatedPrice = ((area * 2.270908) / (0.571 - (0.0721 * Math.log(area))));
+   var estimatedPrice = 0;
    price.textContent = 'Estimated Price: ' + '$' + estimatedPrice.toFixed(2);
  };
 };
