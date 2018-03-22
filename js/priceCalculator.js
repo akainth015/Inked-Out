@@ -5,9 +5,9 @@ function rgb2cmyk (r,g,b) {
      var computedK = 0;
 
      //remove spaces from input RGB values, convert to int
-     var r = parseInt( (''+r).replace(/\s/g,''),10 ); 
-     var g = parseInt( (''+g).replace(/\s/g,''),10 ); 
-     var b = parseInt( (''+b).replace(/\s/g,''),10 ); 
+     var r = parseInt( (''+r).replace(/\s/g,''),10 );
+     var g = parseInt( (''+g).replace(/\s/g,''),10 );
+     var b = parseInt( (''+b).replace(/\s/g,''),10 );
 
 
      // BLACK
@@ -35,20 +35,21 @@ Jimp.read(files.file.path, function (err, image) {
     var count = 0;
     var area = image.bitmap.width * image.bitmap.width;
     image.scan(0, 0, image.bitmap.width, image.bitmap.height, function (x, y, idx) {
-        // x, y is the position of this pixel on the image 
-        // idx is the position start position of this rgba tuple in the bitmap Buffer 
-        // this is the image 
-             
+        // x, y is the position of this pixel on the image
+        // idx is the position start position of this rgba tuple in the bitmap Buffer
+        // this is the image
+
         var red   = this.bitmap.data[ idx + 0 ];
         var green = this.bitmap.data[ idx + 1 ];
         var blue  = this.bitmap.data[ idx + 2 ];
         var alpha = this.bitmap.data[ idx + 3 ];
-                
+
         var cmyk = rgb2cmyk (red,green,blue);
         count += cmyk[0],cmyk[1],cmyk[2],cmyk[3];
 
-        // rgba values run from 0 - 255 
-        // e.g. this.bitmap.data[idx] = 0; // removes red from this pixel 
+        // rgba values run from 0 - 255
+        // e.g. this.bitmap.data[idx] = 0; // removes red from this pixel
     });
-    percentInk=count/area;
+    var percentInk = count / area;
+    console.log(percentInk);
 });

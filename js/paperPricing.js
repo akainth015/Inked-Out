@@ -4,6 +4,8 @@ var defaultlabel = document.getElementById('sizelabel')
 var defaultsize = document.getElementById('size');
 var papertype = document.getElementById('paper');
 var price = document.getElementById('price');
+var image = document.getElementById('image-preview');
+
 
 papertype.addEventListener('click', pricing);
 papertype.addEventListener('mouseover', pricing);
@@ -18,7 +20,6 @@ stickerheight.addEventListener('click', pricing);
 function pricing() {
   var vpapertype = papertype.options[papertype.selectedIndex].value;
   var size = defaultsize.options[defaultsize.selectedIndex].value;
-
 if (vpapertype == 'regular' && size == '18x24') {
   estimatedPrice = '$12';
   price.textContent = 'Estimated Price: ' + estimatedPrice;
