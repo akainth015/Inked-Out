@@ -335,7 +335,7 @@
 
 
         function checkSticker() {
-          if (papertype.options[papertype.selectedIndex].value == 'sticker') {
+          if (papertype.options[papertype.selectedIndex].value) {
             defaultlabel.style.visibility = 'hidden';
             defaultsize.style.visibility = 'hidden';
             stickerheight.style.visibility = 'visible';
